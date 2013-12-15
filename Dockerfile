@@ -10,7 +10,7 @@ ADD http://commondatastorage.googleapis.com/alexismp-docker-opencv-demo%2FfaceDe
 RUN tar -xvf /home/faceDetect.tar.gz -C /home/
 RUN rm /home/faceDetect.tar.gz
 
-# install 'ant' and its java dependency
+# Update list of packages
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
 RUN apt-get update
 
@@ -33,6 +33,6 @@ ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64/
 ENV PATH $JAVA_HOME/bin:$PATH
 ENV LD_LIBRARY_PATH /opt/opencv-2.4.7/build/lib/ 
 
-
 # run default detect face job
-#CMD ["ant", "build"]
+CMD ["cd", "/home/faceDetect"]
+CMD ["ant", "build"]
