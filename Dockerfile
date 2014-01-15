@@ -13,7 +13,7 @@ RUN rm /home/faceDetect.tar.gz
 # Update list of packages and install Ant
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
 RUN apt-get update
-RUN apt-get install -y ant
+RUN apt-get install -y --force-yes ant
 
 ENV LD_LIBRARY_PATH /opt/opencv-2.4.7/build/lib/ 
 
