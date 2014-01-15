@@ -11,7 +11,6 @@ RUN tar -xvf /home/faceDetect.tar.gz -C /home/
 RUN rm /home/faceDetect.tar.gz
 
 # Update list of packages and install Ant
-RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get install -y --force-yes ant
 
