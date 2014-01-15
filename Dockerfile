@@ -13,7 +13,7 @@ RUN rm /home/faceDetect.tar.gz
 # Add testing source, update and install more recent libc6 version required by OpenCV
 RUN echo "deb http://ftp.us.debian.org/debian testing main contrib non-free" >> /etc/apt/sources.list
 RUN apt-get update
-RUN apt-get -t testing install libc6-dev
+RUN apt-get -t testing install -y --force-yes libc6-dev
 
 # Update list of packages and install Ant
 RUN apt-get install -y --force-yes ant
